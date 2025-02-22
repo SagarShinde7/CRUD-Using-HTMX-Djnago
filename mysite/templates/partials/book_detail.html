@@ -1,0 +1,9 @@
+{% comment %} {{ book.title }}, {{ book.number_of_pages }} {% endcomment %}
+
+<div hx-target="this" hx-swap="outerHTML">
+    <h3>{{ book.title }}</h3>
+    <p>Number of pages: {{ book.number_of_pages }}</p>
+
+    <button hx-get="{% url 'update-book' book.id %}">Upadte</button>
+    <button hx-post="{% url 'delete-book' book.id%}">Delete</button>
+</div>
